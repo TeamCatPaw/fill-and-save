@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class MouseColliderController : MonoBehaviour
 {
-	CircleCollider2D col;
-    void Start()
-    {
-		col = GetComponent<CircleCollider2D> ();
-    }
 
-    // Update is called once per frame
     void Update()
     {
-		if (Input.GetMouseButton (0)) {
-			col.enabled = true;
-			col.transform.position = (Vector2) Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		} else {
-			col.enabled = false;
-		}
+        if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+
+                RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+                if (hit.collider != null)
+                {
+                    Debug.Log(hit.collider.gameObject.name);
+                    
+                }
+            }
     }
 }
