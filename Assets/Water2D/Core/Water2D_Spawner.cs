@@ -20,7 +20,7 @@
 
 	public class Water2D_Spawner : MonoBehaviour
 	{
-
+		private MetaballParticleClass MetaBall;
 		public static Water2D_Spawner instance;
 
 		void Awake()
@@ -245,7 +245,7 @@
 			_breakLoop = true;
 
 			microSpawns.Clear ();
-
+			
 
 			for (int i = 0; i < WaterDropsObjects.Length; i++) {
 				if (WaterDropsObjects [i].GetComponent<MetaballParticleClass> ().Active == true) {
@@ -279,26 +279,31 @@
 					if (_breakLoop)
 						yield break;
 
-					MetaballParticleClass MetaBall = WaterDropsObjects [i].GetComponent<MetaballParticleClass> ();
+					if (WaterDropsObjects [i]!=null)
+					{
+						MetaBall = WaterDropsObjects [i].GetComponent<MetaballParticleClass> ();
 
-					if (MetaBall.Active == true)
-						continue;
+						if (MetaBall.Active == true)
+							continue;
 
-					MetaBall.LifeTime = LifeTime;
-					WaterDropsObjects [i].transform.position = transform.position;
-					MetaBall.Active = true;
-					MetaBall.witinTarget = false;
+						MetaBall.LifeTime = LifeTime;
+						WaterDropsObjects [i].transform.position = transform.position;
+						MetaBall.Active = true;
+						MetaBall.witinTarget = false;
+						if (_initSpeed == Vector2.zero)
+							_initSpeed = initSpeed;
 
-					if (_initSpeed == Vector2.zero)
-						_initSpeed = initSpeed;
+						if (DynamicChanges) {
+							_initSpeed = initSpeed;
+							MetaBall.transform.localScale = new Vector3 (size, size, 1f);
+							SetWaterColor (FillColor, StrokeColor);
+						}
 
-					if (DynamicChanges) {
-						_initSpeed = initSpeed;
-						MetaBall.transform.localScale = new Vector3 (size, size, 1f);
-						SetWaterColor (FillColor, StrokeColor);
+						WaterDropsObjects [i].GetComponent<Rigidbody2D> ().velocity = _initSpeed;
+	
 					}
-
-					WaterDropsObjects [i].GetComponent<Rigidbody2D> ().velocity = _initSpeed;
+					
+					
 
 
 					// Count limiter
