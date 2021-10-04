@@ -150,7 +150,7 @@
 			//Application.targetFrameRate = 60;
 
 			_parent = new GameObject ("_metaBalls");
-			_parent.hideFlags = HideFlags.HideInHierarchy;
+			//_parent.hideFlags = HideFlags.HideInHierarchy;
 			WaterDropsObjects [0].transform.SetParent (_parent.transform);
 			WaterDropsObjects [0].transform.localScale = new Vector3 (size, size, 1f);
 			WaterDropsObjects [0].GetComponent<MetaballParticleClass>().Active = false;
@@ -316,7 +316,7 @@
 
 					if(waitBetweenDropSpawn)
 						yield return new WaitForSeconds (DelayBetweenParticles);
-
+						
 				}
 				yield return new WaitForEndOfFrame ();
 				alreadySpawned = true;

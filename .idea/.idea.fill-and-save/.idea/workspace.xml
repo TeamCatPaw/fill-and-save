@@ -12,7 +12,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/MovementScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/BeginingTimer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1yzcBRvHZQ8btzthFg5K9KaEzAb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -60,6 +59,8 @@
       <workItem from="1633257785735" duration="1510000" />
       <workItem from="1633285225695" duration="4954000" />
       <workItem from="1633362236339" duration="4377000" />
+      <workItem from="1633382213696" duration="682000" />
+      <workItem from="1633383145359" duration="709000" />
     </task>
     <servers />
   </component>
