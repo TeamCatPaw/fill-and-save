@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,7 +23,7 @@ public class SpawnManager : MonoBehaviour
     }
     #endregion
 
-    public int _dropCounter = 0;//objet pooling olunca private olacak.
+    //public int _dropCounter = 0;//object pooling olunca private olacak.
     private bool _isAvailableForSpawn = true;
     [SerializeField]
     [Range(0f, .3f)] private float _delayBetweenDrops = 0.05f;
@@ -31,10 +32,15 @@ public class SpawnManager : MonoBehaviour
 
     Queue<Vector3> _spawnPositions = new Queue<Vector3>();
 
+    public Transform _currentCup; 
+    
 
     private void Update() {
-        if (Input.GetKey("space")) {
-            _spawnPositions.Enqueue(new Vector3(0, 1, 1));
+
+        if (Input.GetKeyDown("space")) {
+            _spawnPositions.Enqueue(_currentCup.position);
+            _spawnPositions.Enqueue(_currentCup.position);
+            _spawnPositions.Enqueue(_currentCup.position);
 
         }
 
@@ -56,8 +62,7 @@ public class SpawnManager : MonoBehaviour
         GameObject drop = Instantiate(_waterDrop, _spawnPoint, Quaternion.identity, transform);
         drop.SetActive(true);
         drop.GetComponent<Drop>().ignoredAreas.Add(areaId);
-        _dropCounter++;
-        Debug.Log(_dropCounter);
+        EventManager.GetInstance().DoDropCreated();
         StartCoroutine(SpawnTimer());
     }
 

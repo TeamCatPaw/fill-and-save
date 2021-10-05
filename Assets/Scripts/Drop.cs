@@ -20,9 +20,16 @@ public class Drop : MonoBehaviour
             currentArea = null;
 
         }else if (collision.CompareTag("Lava")) {
-            SpawnManager.GetInstance()._dropCounter--;
-            Debug.Log(SpawnManager.GetInstance()._dropCounter);
+
+            EventManager.GetInstance().DoDropBurned();
             Destroy(gameObject);
+        }else if (collision.CompareTag("Collect")) {
+
+            EventManager.GetInstance().DoDropCollected();
+            Destroy(gameObject);
+        }else if (collision.CompareTag("Aquarium")) {
+
+            EventManager.GetInstance().DoDropPlaced();
         }
     }
 

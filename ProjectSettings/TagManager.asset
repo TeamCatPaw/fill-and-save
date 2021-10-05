@@ -7,6 +7,8 @@ TagManager:
   - Metaball_liquid
   - Multiply
   - Lava
+  - Collect
+  - Aquarium
   layers:
   - Default
   - TransparentFX

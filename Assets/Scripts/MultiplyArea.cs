@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MultiplyArea : MonoBehaviour {
@@ -9,6 +10,8 @@ public class MultiplyArea : MonoBehaviour {
 
     public int multiplier;
 
+    private void Start() {
+        transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = "x" + multiplier.ToString();
+    }
 
-    //Startta GetChild() ile yazısına eriş ve multiplier + "x" yazdır.
 }
