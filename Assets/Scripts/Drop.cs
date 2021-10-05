@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Drop : MonoBehaviour
 {
+
     public List<int> ignoredAreas = new List<int>();
     private MultiplyArea currentArea;
+
+    private void Start() {
+    }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         currentArea = collision.GetComponent<MultiplyArea>();
@@ -16,6 +20,8 @@ public class Drop : MonoBehaviour
             currentArea = null;
 
         }else if (collision.CompareTag("Lava")) {
+            SpawnManager.GetInstance()._dropCounter--;
+            Debug.Log(SpawnManager.GetInstance()._dropCounter);
             Destroy(gameObject);
         }
     }

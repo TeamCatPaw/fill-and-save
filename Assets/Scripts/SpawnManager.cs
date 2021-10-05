@@ -22,7 +22,7 @@ public class SpawnManager : MonoBehaviour
     }
     #endregion
 
-    //private float _spawnTest = 0f;
+    public int _dropCounter = 0;//objet pooling olunca private olacak.
     private bool _isAvailableForSpawn = true;
     [SerializeField]
     [Range(0f, .3f)] private float _delayBetweenDrops = 0.05f;
@@ -56,7 +56,8 @@ public class SpawnManager : MonoBehaviour
         GameObject drop = Instantiate(_waterDrop, _spawnPoint, Quaternion.identity, transform);
         drop.SetActive(true);
         drop.GetComponent<Drop>().ignoredAreas.Add(areaId);
-        //Debug.Log(_spawnPositions.Count);
+        _dropCounter++;
+        Debug.Log(_dropCounter);
         StartCoroutine(SpawnTimer());
     }
 
