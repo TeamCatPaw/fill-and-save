@@ -32,9 +32,13 @@ public class MetaballParticleClass : MonoBehaviour {
 		//MObject = gameObject;
 		rb = GetComponent<Rigidbody2D> ();
 		tr = GetComponent<TrailRenderer> ();
+
+		CameraFollow.instance.drops.Add(gameObject, gameObject.transform.position.y);
 	}
 
 	void Update () {
+
+		CameraFollow.instance.drops[gameObject] = transform.position.y;
 
 		if (Active == true) {
 
