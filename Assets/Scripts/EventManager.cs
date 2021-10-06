@@ -23,6 +23,8 @@ public class EventManager : MonoBehaviour
     }
     #endregion
 
+    public event Action OnStartPouring;
+
     public event Action OnDropCreated;
     public event Action OnDropCollected;
     public event Action OnDropBurned;
@@ -30,6 +32,9 @@ public class EventManager : MonoBehaviour
 
     public event Action OnCupPassed;
 
+    public void DoStartPouring() {
+        OnStartPouring?.Invoke();
+    }
     public void DoDropCreated() {
         OnDropCreated?.Invoke();
     }

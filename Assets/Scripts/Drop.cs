@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Drop : MonoBehaviour
 {
-
+    [SerializeField] private GameObject steamParticle;
     public List<int> ignoredAreas = new List<int>();
     private MultiplyArea currentArea;
 
@@ -21,7 +21,8 @@ public class Drop : MonoBehaviour
 
         }else if (collision.CompareTag("Lava")) {
 
-            EventManager.GetInstance().DoDropBurned();
+            EventManager.GetInstance().DoDropBurned(); 
+            Instantiate(steamParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }else if (collision.CompareTag("Collect")) {
 
