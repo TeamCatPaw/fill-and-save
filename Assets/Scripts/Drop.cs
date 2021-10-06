@@ -17,6 +17,7 @@ public class Drop : MonoBehaviour
         if (collision.CompareTag("Multiply") && !ignoredAreas.Contains(currentArea.areaId)) {
 
             Multiply(currentArea.multiplier, currentArea.areaId);
+            currentArea.ScaleText();
             currentArea = null;
 
         }else if (collision.CompareTag("Lava")) {
@@ -27,6 +28,7 @@ public class Drop : MonoBehaviour
         }else if (collision.CompareTag("Collect")) {
 
             EventManager.GetInstance().DoDropCollected();
+            collision.GetComponent<Cup>().PlayStars();
             Destroy(gameObject);
         }else if (collision.CompareTag("Aquarium")) {
 

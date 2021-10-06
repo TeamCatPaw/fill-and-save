@@ -30,6 +30,9 @@ public class EventManager : MonoBehaviour
     public event Action OnDropBurned;
     public event Action OnDropPlaced;
 
+    public event Action OnWin;
+    public event Action OnLose;
+
     public event Action OnCupPassed;
 
     public void DoStartPouring() {
@@ -46,6 +49,12 @@ public class EventManager : MonoBehaviour
     }
     public void DoDropPlaced() {
         OnDropPlaced?.Invoke();
+    }
+    public void DoWin() {
+        OnWin?.Invoke();
+    }
+    public void DoLose() {
+        OnLose?.Invoke();
     }
     public void DoCupPassed() {
         OnCupPassed?.Invoke();

@@ -49,7 +49,7 @@ public class SpawnManager : MonoBehaviour
         }
 
         if (_firstDropCount > 0 && _isFirstPouringStarted && _isAvailableForSpawn) {
-            Spawn(_currentCup.position);
+            Spawn(_currentCup.position, true);
             _firstDropCount--;
         }
 
@@ -68,10 +68,12 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    private void Spawn(Vector3 _spawnPoint) {
+    private void Spawn(Vector3 _spawnPoint, bool isFirstDrops = false) {
         GameObject drop = Instantiate(_waterDrop, _spawnPoint, Quaternion.identity, transform);
         drop.SetActive(true);
-        drop.GetComponent<Drop>().ignoredAreas.Add(areaId);
+        if (!isFirstDrops) {
+            drop.GetComponent<Drop>().ignoredAreas.Add(areaId);
+        }
         EventManager.GetInstance().DoDropCreated();
         StartCoroutine(SpawnTimer());
     }

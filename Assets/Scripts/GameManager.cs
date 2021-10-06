@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour//
         EventManager.GetInstance().OnDropPlaced += DecreaseDropCounter;
         EventManager.GetInstance().OnDropPlaced += WinCheck;
 
+        _cupCounter = 1;
     }
 
     private void IncreaseDropCounter() {
@@ -30,18 +31,20 @@ public class GameManager : MonoBehaviour//
     
     private void WinCheck() {
         if (_dropCounter <= 0) {
-            if (_cupCounter == 1) {
-                Debug.Log("Win");
+            if (_cupCounter == 1) {//Revize gerek
+                EventManager.GetInstance().DoWin();
                 return;
+            } else {
+                _cupCounter++;
+                EventManager.GetInstance().DoCupPassed();
+                Debug.Log("Cup Passed");
             }
-            _cupCounter++;
-            EventManager.GetInstance().DoCupPassed();
-            Debug.Log("Cup Passed");
+            
         }
     }
     private void LoseCheck() {
         if (_dropCounter <= 0) {
-            Debug.Log("Lose");
+            EventManager.GetInstance().DoLose();
         }
     }
     private void Update() {

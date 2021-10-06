@@ -29,7 +29,7 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetMouseButton(0)) {
             Vector3 _cupPosition = _cups[_currentCupId].transform.position;
-            _cupPosition.x = Mathf.Clamp(Input.mousePosition.x / Screen.width * 8f, 1.75f, 5.5f);//Min ve Max level design'a göre düzenlenecek
+            _cupPosition.x = Mathf.Clamp(Input.mousePosition.x / Screen.width * 8f, 1.7f, 5.5f);//Min ve Max level design'a göre düzenlenecek
             //Debug.Log(Input.mousePosition.x / Screen.width);
             _cups[_currentCupId].transform.position = _cupPosition;
         }
@@ -47,6 +47,7 @@ public class InputManager : MonoBehaviour
     }
 
     private void NextCup() {
+        Debug.Log("NextCup");
         _currentCupId++;
         SpawnManager.GetInstance()._currentCup = _cups[_currentCupId].transform;
     }
