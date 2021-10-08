@@ -26,11 +26,12 @@ public class SpawnManager : MonoBehaviour
     //public int _dropCounter = 0;//object pooling olunca private olacak.
     private bool _isAvailableForSpawn = true;
     [SerializeField]
-    [Range(0f, .3f)] private float _delayBetweenDrops = 0.05f;
+    private float _delayBetweenDrops = 0.05f;
 
     [SerializeField] private GameObject _waterDrop;
 
     Queue<Vector3> _spawnPositions = new Queue<Vector3>();
+    Queue<int> _spawnPositionIds = new Queue<int>();
 
     [HideInInspector] public Transform _currentCup;
 
@@ -42,6 +43,7 @@ public class SpawnManager : MonoBehaviour
 
     private void Start() {
         _gameManager = GetComponent<GameManager>();
+        _firstDropCount = 3;
         EventManager.GetInstance().OnStartPouring += CreateforCup;
     }
 
@@ -52,31 +54,30 @@ public class SpawnManager : MonoBehaviour
         }
 
         if (_firstDropCount > 0 && _isFirstPouringStarted && _isAvailableForSpawn) {
-            Spawn(_currentCup.position, true);
+            Spawn(_currentCup.position, 0, true);//0 hata almamak için bir anlamı yok.
             _firstDropCount--;
         }
 
         if (_spawnPositions.Count > 0 && _isAvailableForSpawn) {
-            Spawn(_spawnPositions.Dequeue());
+            Spawn(_spawnPositions.Dequeue(), _spawnPositionIds.Dequeue());
 
         }
 
     }
 
-    private int areaId;
     public void AddToQueue(Vector3 _spawnPoint, int _multiplier, int _areaId) {
-        areaId = _areaId;
+
         for (int i = 1; i < _multiplier; i++) {
             _spawnPositions.Enqueue(_spawnPoint);
+            _spawnPositionIds.Enqueue(_areaId);
         }
     }
 
-    private void Spawn(Vector3 _spawnPoint, bool isFirstDrops = false) {
+    private void Spawn(Vector3 _spawnPoint, int areaId, bool isFirstDrops = false) {
         GameObject drop = Instantiate(_waterDrop, _spawnPoint, Quaternion.identity, transform);
         drop.SetActive(true);
         if (!isFirstDrops) {
             drop.GetComponent<Drop>().ignoredAreas.Add(areaId);
-            drop.name = "lol";
         }
         EventManager.GetInstance().DoDropCreated();
         StartCoroutine(SpawnTimer());

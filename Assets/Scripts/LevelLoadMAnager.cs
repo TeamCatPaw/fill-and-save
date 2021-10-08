@@ -8,7 +8,7 @@ public class LevelLoadMAnager : MonoBehaviour
 {
 
     private void Start() {
-        PlayerPrefs.SetInt("SavedLevel", 11);
+        PlayerPrefs.SetInt("SavedLevel", 13);//SİL! SİL! SİL! SİL! SİL! SİL! SİL! SİL! 
         if (SceneManager.GetActiveScene().buildIndex != PlayerPrefs.GetInt("SavedLevel")) {
             NextLevel();
         }
