@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour//
         EventManager.GetInstance().OnDropPlaced += WinCheck;
 
         _totalCupCount = GameObject.FindGameObjectsWithTag("Collect").Length;
-        _totalCupCount = 1;//SİL!
+        //_totalCupCount = 1;//SİL!
     }
 
     private void IncreaseDropCounter() {

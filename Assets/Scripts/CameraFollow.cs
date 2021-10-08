@@ -31,6 +31,7 @@ public class CameraFollow : MonoBehaviour
     {
         CalculateTargetPos();
         MoveCamera();
+        EventManager.GetInstance().OnDropPlaced += StopCamera;
     }
     void CalculateTargetPos()
     {
@@ -49,5 +50,11 @@ public class CameraFollow : MonoBehaviour
 
         }
     }
-    
+    private void StopCamera() {
+        StartCoroutine(StopTimer());
+    }
+    private IEnumerator StopTimer() {
+        yield return new WaitForSeconds(1f);
+        canCameraMove = false;
+    }
 }

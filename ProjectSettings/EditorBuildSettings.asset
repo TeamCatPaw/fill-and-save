@@ -5,34 +5,64 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/FacebookSDK/Examples/MainMenu.unity
-    guid: 7c38a8c9adc9d5c4b869612e4033ead8
   - enabled: 1
-    path: Assets/Scenes/BasicScene.unity
-    guid: ad96859bbf7cf8b41a609859ea98d265
-  - enabled: 0
-    path: Assets/FacebookSDK/Examples/AccessTokenMenu.unity
-    guid: 67cb5b2387b8e4ec9b2fa69ad9510e9b
-  - enabled: 0
-    path: Assets/FacebookSDK/Examples/AppEvents.unity
-    guid: 68ab940fa15e34433bff18301686b080
-  - enabled: 0
-    path: Assets/FacebookSDK/Examples/AppLinks.unity
-    guid: 4ac12dfde6570493291366d0ab3eb20d
-  - enabled: 0
-    path: Assets/FacebookSDK/Examples/AppRequests.unity
-    guid: c2250c9c5cf00425384401321f8dffb4
-  - enabled: 0
-    path: Assets/FacebookSDK/Examples/DialogShare.unity
-    guid: 190c345841ecc464e9a122f04369757e
-  - enabled: 0
-    path: Assets/FacebookSDK/Examples/GraphRequest.unity
-    guid: 444ae7ddf432b457a97bfe42021075e3
-  - enabled: 0
-    path: Assets/FacebookSDK/Examples/LogView.unity
-    guid: c07ff0bf6bea74c2eb681ac0cae44265
-  - enabled: 0
-    path: Assets/FacebookSDK/Examples/Pay.unity
-    guid: 3ee189cdb21ea4bdb9d7022a0780c44c
+    path: Assets/Scenes/Level_01.unity
+    guid: d276e80b1ed006647bd1f90db9e614b5
+  - enabled: 1
+    path: Assets/Scenes/Level_02.unity
+    guid: cde11192c978eee41a4950f7271dd15e
+  - enabled: 1
+    path: Assets/Scenes/Level_03.unity
+    guid: fefc1a0d96738a747a273b764ba2c519
+  - enabled: 1
+    path: Assets/Scenes/Level_04.unity
+    guid: 2bf062c981f04614595e564fce7a2f3c
+  - enabled: 1
+    path: Assets/Scenes/Level_05.unity
+    guid: daee492017614204c8d0ccc9cdb0c887
+  - enabled: 1
+    path: Assets/Scenes/Level_06.unity
+    guid: 7a8eed1044cb0a5478a0983ea603cd01
+  - enabled: 1
+    path: Assets/Scenes/Level_07.unity
+    guid: 3b9fe708bb12c1a42bc9cc15c14fa588
+  - enabled: 1
+    path: Assets/Scenes/Level_08.unity
+    guid: d2d6f3613192d7f4fafe3333ada188f8
+  - enabled: 1
+    path: Assets/Scenes/Level_09.unity
+    guid: 12572736d13166e43956636a785afcb9
+  - enabled: 1
+    path: Assets/Scenes/Level_10.unity
+    guid: ade5e183cf6d76043886204c4bd3619c
+  - enabled: 1
+    path: Assets/Scenes/Level_11.unity
+    guid: 8b4175581a07b6d47b5905ffc5fecdab
+  - enabled: 1
+    path: Assets/Scenes/Level_12.unity
+    guid: f254cf82642ac67439add9f6b55363a0
+  - enabled: 1
+    path: Assets/Scenes/Level_13.unity
+    guid: 3deda8f823ef52344b84f3ed04907d3f
+  - enabled: 1
+    path: Assets/Scenes/Level_14.unity
+    guid: a65b364c40ef6c64eb95d66a8cd60731
+  - enabled: 1
+    path: Assets/Scenes/Level_15.unity
+    guid: 8be2bfb5c74c40c4ca944b8b86bdc678
+  - enabled: 1
+    path: Assets/Scenes/Level_16.unity
+    guid: e57d1c47d16e8a249a60d28fbc725dbe
+  - enabled: 1
+    path: Assets/Scenes/Level_17.unity
+    guid: 8cddff3534c9c124c901155fe218d146
+  - enabled: 1
+    path: Assets/Scenes/Level_18.unity
+    guid: 5281f848b5c57bd418d693eb0cddcf76
+  - enabled: 1
+    path: Assets/Scenes/Level_19.unity
+    guid: dcf9f83f50c3b894ab59698204404e4c
+  - enabled: 1
+    path: Assets/Scenes/Level_20.unity
+    guid: 48f251930c4f60a4897faafec13cba1a
   m_configObjects: {}

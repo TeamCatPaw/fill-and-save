@@ -14,6 +14,18 @@ public class InputManager : MonoBehaviour
 
     private void Start() {
         EventManager.GetInstance().OnCupPassed += NextCup;
+
+        _cups = GameObject.FindGameObjectsWithTag("Collect");
+        if (_cups.Length > 1) {
+            if (_cups[0].transform.position.y < _cups[1].transform.position.y) {
+                GameObject cup = _cups[0];
+                _cups[0] = _cups[1];
+                _cups[1] = cup;
+            }
+            _cups[1].GetComponent<BoxCollider2D>().enabled = true;
+        }
+        
+        
         SpawnManager.GetInstance()._currentCup = _cups[0].transform;
     }
 
