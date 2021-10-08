@@ -38,7 +38,10 @@ public class SpawnManager : MonoBehaviour
 
     private bool _isFirstPouringStarted;
 
+    private GameManager _gameManager;
+
     private void Start() {
+        _gameManager = GetComponent<GameManager>();
         EventManager.GetInstance().OnStartPouring += CreateforCup;
     }
 
@@ -73,6 +76,7 @@ public class SpawnManager : MonoBehaviour
         drop.SetActive(true);
         if (!isFirstDrops) {
             drop.GetComponent<Drop>().ignoredAreas.Add(areaId);
+            drop.name = "lol";
         }
         EventManager.GetInstance().DoDropCreated();
         StartCoroutine(SpawnTimer());
@@ -84,9 +88,9 @@ public class SpawnManager : MonoBehaviour
         _isAvailableForSpawn = true;
     }
     private void CreateforCup() {
-        //for (int i = 0; i < _firstDropCount; i++) {
-        //    _spawnPositions.Enqueue(_currentCup.position);
-        //}
         _isFirstPouringStarted = true;
+        if (_gameManager._nextStageDropCount > _firstDropCount) {
+            _firstDropCount = _gameManager._nextStageDropCount;
+        }
     }
 }

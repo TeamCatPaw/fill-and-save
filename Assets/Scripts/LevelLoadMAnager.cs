@@ -8,11 +8,12 @@ public class LevelLoadMAnager : MonoBehaviour
 {
 
     private void Start() {
+        PlayerPrefs.SetInt("SavedLevel", 11);
         if (SceneManager.GetActiveScene().buildIndex != PlayerPrefs.GetInt("SavedLevel")) {
             NextLevel();
         }
         FindButtons();
-        EventManager.GetInstance().OnWin += SaveLevel;//OnWin Event'i çağırılıyor ama SaveLevel içindeki debug log yazdırılmıyor
+        EventManager.GetInstance().OnWin += SaveLevel;
 
     }
 
@@ -22,12 +23,12 @@ public class LevelLoadMAnager : MonoBehaviour
     }
     private void NextLevel() {
         int levelCount = PlayerPrefs.GetInt("SavedLevel");
-        Debug.Log(levelCount);
+        //Debug.Log(levelCount);
         SceneManager.LoadScene(levelCount % 20);
     }
     public void SaveLevel() {
         PlayerPrefs.SetInt("SavedLevel", SceneManager.GetActiveScene().buildIndex + 1);
-        Debug.Log("SavedLevel" + " " + PlayerPrefs.GetInt("SavedLevel"));
+        //Debug.Log("SavedLevel" + " " + PlayerPrefs.GetInt("SavedLevel"));
     }
     private void FindButtons() {
         GameObject.Find("UI_Canvas").transform.GetChild(0).GetChild(2).gameObject.GetComponent<Button>().onClick.AddListener(Restart);

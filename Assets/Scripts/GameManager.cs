@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour//
 {
-    private int _dropCounter;
+    public int _dropCounter;
     private int _cupCounter = 1;
     private int _totalCupCount;
+
+    public int _nextStageDropCount = 0;
 
     private void Start() {
         EventManager.GetInstance().OnDropCreated += IncreaseDropCounter;
@@ -15,6 +17,7 @@ public class GameManager : MonoBehaviour//
         EventManager.GetInstance().OnDropBurned += LoseCheck;
 
         EventManager.GetInstance().OnDropCollected += DecreaseDropCounter;
+        EventManager.GetInstance().OnDropCollected += IncreaseNextStageDropCounter;
         EventManager.GetInstance().OnDropCollected += WinCheck;
 
         EventManager.GetInstance().OnDropPlaced += DecreaseDropCounter;
@@ -30,7 +33,9 @@ public class GameManager : MonoBehaviour//
     private void DecreaseDropCounter() {
         _dropCounter--;
     }
-    
+    private void IncreaseNextStageDropCounter() {
+        _nextStageDropCount++;
+    }
     private void WinCheck() {
         if (_dropCounter == 0) {
             if (_totalCupCount == _cupCounter) {//Revize gerek

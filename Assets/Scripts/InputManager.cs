@@ -12,6 +12,10 @@ public class InputManager : MonoBehaviour
 
     private bool _isRotating = false;
 
+    private bool _isReady = true;
+
+    private bool _moveToDown = false;
+
     private void Start() {
         EventManager.GetInstance().OnCupPassed += NextCup;
 
@@ -34,40 +38,64 @@ public class InputManager : MonoBehaviour
         if (Input.GetKeyDown("a")) {
             NextCup();
         }
+        if (_isReady) {
+            if (Input.GetMouseButtonDown(0) && !_isStageStarted) {
+                StartCoroutine(FirstPouringTimer());
+            }
 
-        if (Input.GetMouseButtonDown(0) && !_isStageStarted) {
-            StartCoroutine(FirstPouringTimer());
-        }
+            if (Input.GetMouseButton(0)) {
+                Vector3 _cupPosition = _cups[_currentCupId].transform.position;
+                _cupPosition.x = Mathf.Clamp(Input.mousePosition.x / Screen.width * 8f, 1.7f, 5.5f);
 
-        if (Input.GetMouseButton(0)) {
-            Vector3 _cupPosition = _cups[_currentCupId].transform.position;
-            _cupPosition.x = Mathf.Clamp(Input.mousePosition.x / Screen.width * 8f, 1.7f, 5.5f);
+                _cups[_currentCupId].transform.position = _cupPosition;
+            }
 
-            _cups[_currentCupId].transform.position = _cupPosition;
-        }
+            if (_isRotating) {
 
-        if (_isRotating) {
+                Vector3 cupEuler = _cups[_currentCupId].transform.localEulerAngles;
+                cupEuler.z = Mathf.LerpAngle(cupEuler.z, -90, 0.1f);
+                _cups[_currentCupId].transform.localEulerAngles = cupEuler;
 
-            Vector3 cupEuler = _cups[_currentCupId].transform.localEulerAngles;
-            cupEuler.z = Mathf.LerpAngle(cupEuler.z, -90, 0.1f);
-            _cups[_currentCupId].transform.localEulerAngles = cupEuler;
-
-            if (Mathf.Abs(_cups[_currentCupId].transform.localEulerAngles.z - 90) < 1) {
-                _isRotating = false;
+                if (Mathf.Abs(_cups[_currentCupId].transform.localEulerAngles.z - 90) < 181) {
+                    _isRotating = false;
+                }
             }
         }
+
+        if (_moveToDown) {
+            Vector3 _cupPosition = _cups[_currentCupId].transform.position;
+            
+            _cupPosition.y = Mathf.Lerp(_cupPosition.y, -8.6f, 0.05f);
+            _cups[_currentCupId].transform.position = _cupPosition;
+        }
+        
     }
 
     private void NextCup() {
         Debug.Log("NextCup");
         _currentCupId++;
+        StartCoroutine(ReadyTimer());
+        StartCoroutine(MoveToDown());
+        _cups[_currentCupId].GetComponent<BoxCollider2D>().enabled = false;
         SpawnManager.GetInstance()._currentCup = _cups[_currentCupId].transform;
     }
     private IEnumerator FirstPouringTimer() {
         _isStageStarted = true;
         _isRotating = true;
         yield return new WaitForSeconds(_pouringSec);
+        _isStageStarted = false;
         EventManager.GetInstance().DoStartPouring();
     }
 
+    private IEnumerator ReadyTimer() {
+        _isReady = false;
+        yield return new WaitForSeconds(1.5f);
+        _isReady = true;
+    }
+
+    private IEnumerator MoveToDown() {
+        _moveToDown = true;
+        yield return new WaitForSeconds(1.5f);
+        _moveToDown = false;
+    }
 }

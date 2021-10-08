@@ -22,9 +22,12 @@ public class CameraFollow : MonoBehaviour
     private Vector3 targetPos;
 
     [SerializeField] private Vector3 _offset;
+
+    private bool _moveToDown = false;
     void Start()
     {
         instance = this;
+        EventManager.GetInstance().OnCupPassed += MoveToDown;
     }
 
     void Update()
@@ -32,6 +35,13 @@ public class CameraFollow : MonoBehaviour
         CalculateTargetPos();
         MoveCamera();
         EventManager.GetInstance().OnDropPlaced += StopCamera;
+
+        if (_moveToDown) {
+            Vector3 _camPosition = transform.position;
+
+            _camPosition.y = Mathf.Lerp(_camPosition.y, -11f, 0.05f);
+            transform.position = _camPosition;
+        }
     }
     void CalculateTargetPos()
     {
@@ -56,5 +66,13 @@ public class CameraFollow : MonoBehaviour
     private IEnumerator StopTimer() {
         yield return new WaitForSeconds(1f);
         canCameraMove = false;
+    }
+    private void MoveToDown() {
+        StartCoroutine(MoveToDownTimer());
+    }
+    private IEnumerator MoveToDownTimer() {
+        _moveToDown = true;
+        yield return new WaitForSeconds(1.5f);
+        _moveToDown = false;
     }
 }
