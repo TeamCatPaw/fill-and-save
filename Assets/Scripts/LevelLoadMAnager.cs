@@ -1,14 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class LevelLoadMAnager : MonoBehaviour
 {
-
+ 
     private void Start() {
-        PlayerPrefs.SetInt("SavedLevel", 13);//SİL! SİL! SİL! SİL! SİL! SİL! SİL! SİL! 
+        //PlayerPrefs.SetInt("SavedLevel", 13);//SİL! SİL! SİL! SİL! SİL! SİL! SİL! SİL! 
+        if(PlayerPrefs.GetInt("SavedLevel") == 0) {
+                PlayerPrefs.SetInt("SavedLevel", 1);
+        }
         if (SceneManager.GetActiveScene().buildIndex != PlayerPrefs.GetInt("SavedLevel")) {
             NextLevel();
         }

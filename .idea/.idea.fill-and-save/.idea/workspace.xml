@@ -12,6 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/MovementScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FacebookInit.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1yzcBRvHZQ8btzthFg5K9KaEzAb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -64,6 +65,8 @@
       <workItem from="1633414791890" duration="443000" />
       <workItem from="1633627094998" duration="999000" />
       <workItem from="1633673062026" duration="695000" />
+      <workItem from="1633690089797" duration="2040000" />
+      <workItem from="1633693706828" duration="1265000" />
     </task>
     <servers />
   </component>

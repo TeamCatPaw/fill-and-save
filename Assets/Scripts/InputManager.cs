@@ -67,7 +67,12 @@ public class InputManager : MonoBehaviour
             
             _cupPosition.y = Mathf.Lerp(_cupPosition.y, -8.6f, 0.05f);
             _cups[_currentCupId].transform.position = _cupPosition;
+            if (Mathf.Abs(_cupPosition.y - -8.6f) < 1 ) {
+                _moveToDown = false;
+                _isReady = true;
+            }
         }
+        
         
     }
 
