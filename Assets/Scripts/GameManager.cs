@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour//
 {
     private int _dropCounter;
-    private int _cupCounter;
+    private int _cupCounter = 1;
+    private int _totalCupCount;
 
     private void Start() {
         EventManager.GetInstance().OnDropCreated += IncreaseDropCounter;
@@ -19,7 +20,8 @@ public class GameManager : MonoBehaviour//
         EventManager.GetInstance().OnDropPlaced += DecreaseDropCounter;
         EventManager.GetInstance().OnDropPlaced += WinCheck;
 
-        _cupCounter = 1;
+        _totalCupCount = GameObject.FindGameObjectsWithTag("Collect").Length;
+        _totalCupCount = 1;//SİL!
     }
 
     private void IncreaseDropCounter() {
@@ -30,8 +32,8 @@ public class GameManager : MonoBehaviour//
     }
     
     private void WinCheck() {
-        if (_dropCounter <= 0) {
-            if (_cupCounter == 1) {//Revize gerek
+        if (_dropCounter == 0) {
+            if (_totalCupCount == _cupCounter) {//Revize gerek
                 EventManager.GetInstance().DoWin();
                 return;
             } else {

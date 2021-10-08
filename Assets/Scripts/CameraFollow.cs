@@ -20,6 +20,8 @@ public class CameraFollow : MonoBehaviour
     
     private float lowestY;
     private Vector3 targetPos;
+
+    [SerializeField] private Vector3 _offset;
     void Start()
     {
         instance = this;
@@ -41,9 +43,9 @@ public class CameraFollow : MonoBehaviour
     }
     void MoveCamera()
     {
-        if (transform.position.y-targetPos.y>0.1f  && canCameraMove )
+        if (transform.position.y- (targetPos.y + _offset.y )> 0.1f  && canCameraMove )
         {
-            transform.position = Vector3.Lerp(transform.position, targetPos, cameraSpeed/50f);
+            transform.position = Vector3.Lerp(transform.position, targetPos + _offset, cameraSpeed/50f);
 
         }
     }

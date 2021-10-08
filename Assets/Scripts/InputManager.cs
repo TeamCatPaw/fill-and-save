@@ -29,8 +29,8 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetMouseButton(0)) {
             Vector3 _cupPosition = _cups[_currentCupId].transform.position;
-            _cupPosition.x = Mathf.Clamp(Input.mousePosition.x / Screen.width * 8f, 1.7f, 5.5f);//Min ve Max level design'a göre düzenlenecek
-            //Debug.Log(Input.mousePosition.x / Screen.width);
+            _cupPosition.x = Mathf.Clamp(Input.mousePosition.x / Screen.width * 8f, 1.7f, 5.5f);
+
             _cups[_currentCupId].transform.position = _cupPosition;
         }
 
@@ -40,7 +40,7 @@ public class InputManager : MonoBehaviour
             cupEuler.z = Mathf.LerpAngle(cupEuler.z, -90, 0.1f);
             _cups[_currentCupId].transform.localEulerAngles = cupEuler;
 
-            if (Mathf.Abs((_cups[_currentCupId].transform.localEulerAngles.z - 90)) < 1) {
+            if (Mathf.Abs(_cups[_currentCupId].transform.localEulerAngles.z - 90) < 1) {
                 _isRotating = false;
             }
         }

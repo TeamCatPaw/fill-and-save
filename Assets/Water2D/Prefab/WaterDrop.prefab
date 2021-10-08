@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 50136950052901686}
   - component: {fileID: 114815093173730838}
   - component: {fileID: 96420874952216904}
+  - component: {fileID: 4439671276585549440}
   m_Layer: 8
   m_Name: WaterDrop
   m_TagString: Metaball_liquid
@@ -94,7 +95,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 199430}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 68ddb697a76638c4986f6ad960e37352, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -116,8 +117,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 0.5
+  m_Material: {fileID: 6200000, guid: 68ddb697a76638c4986f6ad960e37352, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -243,3 +244,18 @@ TrailRenderer:
   m_MinVertexDistance: 0.0001
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &4439671276585549440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6671c3c4227100544acab2b3763adda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  steamParticle: {fileID: 369963627300486439, guid: 71f95816cbc13bd44b9a7137da8b88a5,
+    type: 3}
+  ignoredAreas: 
