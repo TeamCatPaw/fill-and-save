@@ -33,7 +33,9 @@ namespace GameAnalyticsSDK.Events
         #endregion
 
         #region unity derived methods
-
+        
+        
+        
         public void Start ()
         {
             StartCoroutine(SubmitFPSRoutine());
