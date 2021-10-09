@@ -92,6 +92,7 @@ public class SpawnManager : MonoBehaviour
         _isFirstPouringStarted = true;
         if (_gameManager._nextStageDropCount > _firstDropCount) {
             _firstDropCount = _gameManager._nextStageDropCount;
+            _gameManager._nextStageDropCount = 0;
         }
     }
 }

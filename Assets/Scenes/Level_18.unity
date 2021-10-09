@@ -605,7 +605,7 @@ PrefabInstance:
     - target: {fileID: 687274324583250430, guid: 31fd3d61c595dc044a46004e327509d5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 687274324583250430, guid: 31fd3d61c595dc044a46004e327509d5,
         type: 3}
@@ -1162,41 +1162,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!84 &472889082
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 328
-  m_Height: 556
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 1
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &483667691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,6 +1281,7 @@ GameObject:
   - component: {fileID: 487777598}
   - component: {fileID: 487777600}
   - component: {fileID: 487777599}
+  - component: {fileID: 487777601}
   m_Layer: 0
   m_Name: Wall_R (23)
   m_TagString: Untagged
@@ -1413,6 +1379,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &487777601
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487777597}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000076293945, y: 2.4}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1001 &531935908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1814,6 +1796,131 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 683539563}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &685130525
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1405205353}
+    m_Modifications:
+    - target: {fileID: 687274324583250429, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_Name
+      value: InGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0, type: 3}
+--- !u!224 &685130526 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 687274324583250430, guid: 9bb61027d2ee2fc42a1fc38eb2157fa0,
+    type: 3}
+  m_PrefabInstance: {fileID: 685130525}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &731168951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2151,6 +2258,7 @@ GameObject:
   - component: {fileID: 834505267}
   - component: {fileID: 834505269}
   - component: {fileID: 834505268}
+  - component: {fileID: 834505270}
   m_Layer: 0
   m_Name: Wall_R (32)
   m_TagString: Untagged
@@ -2248,6 +2356,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &834505270
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834505266}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000076293945, y: 2.4}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!1 &846330122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2259,6 +2383,7 @@ GameObject:
   - component: {fileID: 846330123}
   - component: {fileID: 846330125}
   - component: {fileID: 846330124}
+  - component: {fileID: 846330126}
   m_Layer: 0
   m_Name: Wall_R (28)
   m_TagString: Untagged
@@ -2356,6 +2481,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &846330126
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846330122}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000076293945, y: 2.4}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!1 &855169002
 GameObject:
   m_ObjectHideFlags: 0
@@ -2367,6 +2508,7 @@ GameObject:
   - component: {fileID: 855169003}
   - component: {fileID: 855169005}
   - component: {fileID: 855169004}
+  - component: {fileID: 855169006}
   m_Layer: 0
   m_Name: Wall_R (26)
   m_TagString: Untagged
@@ -2464,6 +2606,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &855169006
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855169002}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000076293945, y: 2.4}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!1001 &875029683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2693,6 +2851,7 @@ GameObject:
   - component: {fileID: 963861574}
   - component: {fileID: 963861576}
   - component: {fileID: 963861575}
+  - component: {fileID: 963861577}
   m_Layer: 0
   m_Name: Wall_R (21)
   m_TagString: Untagged
@@ -2790,6 +2949,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &963861577
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963861573}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000076293945, y: 2.4}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!1 &999300734
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,6 +3084,7 @@ GameObject:
   - component: {fileID: 1013514139}
   - component: {fileID: 1013514141}
   - component: {fileID: 1013514140}
+  - component: {fileID: 1013514142}
   m_Layer: 0
   m_Name: Wall_R (27)
   m_TagString: Untagged
@@ -3006,6 +3182,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1013514142
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013514138}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000076293945, y: 2.4}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!1001 &1014059568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3297,6 +3489,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!84 &1181873760
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 910
+  m_Height: 271
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 1
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1235290109
 GameObject:
   m_ObjectHideFlags: 0
@@ -3308,6 +3535,7 @@ GameObject:
   - component: {fileID: 1235290110}
   - component: {fileID: 1235290112}
   - component: {fileID: 1235290111}
+  - component: {fileID: 1235290113}
   m_Layer: 0
   m_Name: Wall_R (31)
   m_TagString: Untagged
@@ -3405,6 +3633,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1235290113
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235290109}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000076293945, y: 2.4}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!1 &1252190718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3657,6 +3901,7 @@ GameObject:
   - component: {fileID: 1370060850}
   - component: {fileID: 1370060852}
   - component: {fileID: 1370060851}
+  - component: {fileID: 1370060853}
   m_Layer: 0
   m_Name: Wall_R (29)
   m_TagString: Untagged
@@ -3754,6 +3999,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1370060853
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370060849}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000076293945, y: 2.4}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!1 &1405205349
 GameObject:
   m_ObjectHideFlags: 0
@@ -3844,6 +4105,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 685130526}
   - {fileID: 140305740}
   - {fileID: 1424841431}
   m_Father: {fileID: 0}
@@ -3904,7 +4166,7 @@ PrefabInstance:
     - target: {fileID: 8014484644483773753, guid: 8ff1c327c88aa4740bf9d9cf5bc0bddb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8014484644483773753, guid: 8ff1c327c88aa4740bf9d9cf5bc0bddb,
         type: 3}
@@ -4151,6 +4413,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac406f8ec767e54885b05d6f771436f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dropCounter: 0
+  _nextStageDropCount: 0
 --- !u!114 &1660795362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4813,6 +5077,7 @@ GameObject:
   - component: {fileID: 1999073884}
   - component: {fileID: 1999073886}
   - component: {fileID: 1999073885}
+  - component: {fileID: 1999073887}
   m_Layer: 0
   m_Name: Wall_R (18)
   m_TagString: Untagged
@@ -4910,6 +5175,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1999073887
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999073883}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000076293945, y: 2.4}
+  serializedVersion: 2
+  m_Radius: 0.24
 --- !u!1 &2022197070
 GameObject:
   m_ObjectHideFlags: 0

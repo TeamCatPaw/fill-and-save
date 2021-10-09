@@ -11,7 +11,7 @@ public class LevelLoadMAnager : MonoBehaviour
 {
  
     private void Start() {
-        //PlayerPrefs.SetInt("SavedLevel", 13);//SİL! SİL! SİL! SİL! SİL! SİL! SİL! SİL! 
+        
         if(PlayerPrefs.GetInt("SavedLevel") == 0) {
                 PlayerPrefs.SetInt("SavedLevel", 1);
         }
@@ -37,8 +37,12 @@ public class LevelLoadMAnager : MonoBehaviour
         //Debug.Log("SavedLevel" + " " + PlayerPrefs.GetInt("SavedLevel"));
     }
     private void FindButtons() {
-        GameObject.Find("UI_Canvas").transform.GetChild(0).GetChild(2).gameObject.GetComponent<Button>().onClick.AddListener(Restart);
-        GameObject.Find("UI_Canvas").transform.GetChild(1).GetChild(5).gameObject.GetComponent<Button>().onClick.AddListener(NextLevel);
+        GameObject.Find("UI_Canvas").transform.GetChild(1).GetChild(2).gameObject.GetComponent<Button>().onClick.AddListener(Restart);
+        GameObject.Find("UI_Canvas").transform.GetChild(2).GetChild(5).gameObject.GetComponent<Button>().onClick.AddListener(NextLevel);
+        GameObject.Find("UI_Canvas").transform.GetChild(0).GetChild(0).gameObject.GetComponent<Button>().onClick.AddListener(Restart);
+
+        
+        
         //Debug.Log(GameObject.Find("UI_Canvas").transform.GetChild(0).GetChild(2).name);
         //Debug.Log(GameObject.Find("UI_Canvas").transform.GetChild(1).GetChild(5).name);
     }

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    private GameObject WinPanel, LosePanel;
+    private GameObject WinPanel, LosePanel , inGamePanel ;
     [SerializeField] private float _panelTime;
 
     private void Start() {
-        WinPanel = GameObject.Find("UI_Canvas").transform.GetChild(1).gameObject;
-        LosePanel = GameObject.Find("UI_Canvas").transform.GetChild(0).gameObject;
+        WinPanel = GameObject.Find("UI_Canvas").transform.GetChild(2).gameObject;
+        LosePanel = GameObject.Find("UI_Canvas").transform.GetChild(1).gameObject;
+        inGamePanel = GameObject.Find("UI_Canvas").transform.GetChild(0).gameObject;
+
 
         EventManager.GetInstance().OnWin += OpenWinPanel;
         EventManager.GetInstance().OnLose += OpenLosePanel;
