@@ -9,11 +9,17 @@ using UnityEngine.UI;
 
 public class LevelLoadMAnager : MonoBehaviour
 {
- 
+
+    [SerializeField] private int toLevel;
+
     private void Start() {
-        
-        if(PlayerPrefs.GetInt("SavedLevel") == 0) {
-                PlayerPrefs.SetInt("SavedLevel", 1);
+#if UNITY_EDITOR
+
+        PlayerPrefs.SetInt("SavedLevel", toLevel);
+#endif
+
+        if (PlayerPrefs.GetInt("SavedLevel") == 0) {
+            PlayerPrefs.SetInt("SavedLevel", 1);
         }
         if (SceneManager.GetActiveScene().buildIndex != PlayerPrefs.GetInt("SavedLevel")) {
             NextLevel();
@@ -30,7 +36,11 @@ public class LevelLoadMAnager : MonoBehaviour
     private void NextLevel() {
         int levelCount = PlayerPrefs.GetInt("SavedLevel");
         //Debug.Log(levelCount);
-        SceneManager.LoadScene(levelCount % 20);
+        if (levelCount < 21) {
+            SceneManager.LoadScene(levelCount);
+        } else {
+            SceneManager.LoadScene((levelCount % 20) + 10);
+        }
     }
     public void SaveLevel() {
         PlayerPrefs.SetInt("SavedLevel", SceneManager.GetActiveScene().buildIndex + 1);

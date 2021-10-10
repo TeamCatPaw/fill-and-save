@@ -35,7 +35,7 @@ public class SpawnManager : MonoBehaviour
 
     [HideInInspector] public Transform _currentCup;
 
-    [SerializeField] private int _firstDropCount;
+    private int _firstDropCount;
 
     private bool _isFirstPouringStarted;
 
@@ -43,16 +43,11 @@ public class SpawnManager : MonoBehaviour
 
     private void Start() {
         _gameManager = GetComponent<GameManager>();
-        _firstDropCount = 3;
+        _firstDropCount = 10;
         EventManager.GetInstance().OnStartPouring += CreateforCup;
     }
 
     private void Update() {
-
-        if (Input.GetKeyDown("space")) {
-
-        }
-
         if (_firstDropCount > 0 && _isFirstPouringStarted && _isAvailableForSpawn) {
             Spawn(_currentCup.position, 0, true);//0 hata almamak için bir anlamı yok.
             _firstDropCount--;
