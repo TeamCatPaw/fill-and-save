@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour//
     public int _nextStageDropCount = 0;
 
     private void Start() {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 30;
+
         EventManager.GetInstance().OnDropCreated += IncreaseDropCounter;
 
         EventManager.GetInstance().OnDropBurned += DecreaseDropCounter;
@@ -38,7 +41,7 @@ public class GameManager : MonoBehaviour//
     }
     private void WinCheck() {
         if (_dropCounter == 0) {
-            if (_totalCupCount == _cupCounter) {//Revize gerek
+            if (_totalCupCount == _cupCounter) {
                 EventManager.GetInstance().DoWin();
                 return;
             } else {

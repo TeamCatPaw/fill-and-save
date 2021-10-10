@@ -36,10 +36,10 @@ public class LevelLoadMAnager : MonoBehaviour
     private void NextLevel() {
         int levelCount = PlayerPrefs.GetInt("SavedLevel");
         //Debug.Log(levelCount);
-        if (levelCount < 21) {
+        if (levelCount < 20) {
             SceneManager.LoadScene(levelCount);
         } else {
-            SceneManager.LoadScene((levelCount % 20) + 10);
+            SceneManager.LoadScene((levelCount % 19) + 9);
         }
     }
     public void SaveLevel() {

@@ -25,8 +25,8 @@ public class SpawnManager : MonoBehaviour
 
     //public int _dropCounter = 0;//object pooling olunca private olacak.
     private bool _isAvailableForSpawn = true;
-    [SerializeField]
-    private float _delayBetweenDrops = 0.05f;
+
+    private float _delayBetweenDrops = 0.01f;
 
     [SerializeField] private GameObject _waterDrop;
 
