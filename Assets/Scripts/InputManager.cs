@@ -88,7 +88,7 @@ public class InputManager : MonoBehaviour
         _isStageStarted = true;
         _isRotating = true;
         yield return new WaitForSeconds(_pouringSec);
-        _isStageStarted = false;
+        //_isStageStarted = false;
         EventManager.GetInstance().DoStartPouring();
     }
 
@@ -102,5 +102,6 @@ public class InputManager : MonoBehaviour
         _moveToDown = true;
         yield return new WaitForSeconds(1.5f);
         _moveToDown = false;
+        _isStageStarted = false;
     }
 }
