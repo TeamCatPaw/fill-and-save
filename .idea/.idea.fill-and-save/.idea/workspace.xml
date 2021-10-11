@@ -13,7 +13,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/MovementScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FacebookInit.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ee47be73f7ef409ca5e5ce4b121745b7116000/7e/ecfa526b/PlayerPrefs.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1yzcBRvHZQ8btzthFg5K9KaEzAb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -72,6 +71,7 @@
       <workItem from="1633725354007" duration="352000" />
       <workItem from="1633726191981" duration="1181000" />
       <workItem from="1633769930000" duration="3546000" />
+      <workItem from="1633960371382" duration="5776000" />
     </task>
     <servers />
   </component>
